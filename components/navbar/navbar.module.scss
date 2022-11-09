@@ -1,0 +1,17 @@
+.nav {
+    padding: 1rem 150px;
+    position: fixed;
+    z-index: 99;
+    text-transform: uppercase;
+
+    .branding {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        width: 45px;
+        height: 44px;
+        margin-right: 1rem;
+    }
+}

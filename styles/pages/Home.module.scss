@@ -1,0 +1,69 @@
+@use "Styles/common/variables";
+
+.construction {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background: variables.$col_secondary;
+    position: relative;
+    overflow: hidden;
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        min-width: 300vw;
+        min-height: 300vw;
+        animation-name: rotate;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    &:before {
+        bottom: 13vh;
+        border-radius: 45%;
+        animation-duration: 10s;
+        background: variables.$col_primary;
+    }
+
+    &:after {
+        bottom: 12vh;
+        border-radius: 47%;
+        animation-duration: 10s;
+        background: variables.$col_background;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: translate(-50%, 0) rotateZ(0deg);
+        }
+        50% {
+            transform: translate(-50%, -2%) rotateZ(180deg);
+        }
+        100% {
+            transform: translate(-50%, 0%) rotateZ(360deg);
+        }
+    }
+
+    h1 {
+        z-index: 10;
+        font-size: 64px;
+    }
+
+    .logo {
+        z-index: 10;
+        width: 265px;
+        height: 266px;
+    }
+    .callToAction {
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}

@@ -1,0 +1,27 @@
+@use "Styles/common/variables";
+
+.button {
+    border-radius: 10px;
+    border: 2px solid variables.$col_primary;
+    background: transparent;
+    padding: 1rem 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: variables.$col_primary;
+        left: -100%;
+        z-index: -1;
+        top: 0;
+        transition: left 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    &:hover::before {
+        left: 0;
+    }
+}
